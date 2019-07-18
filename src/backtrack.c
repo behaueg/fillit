@@ -10,4 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/fillit.h"
 
+int		backtrack(t_tetri *t, int nb_t, int index, int i)
+{
+	static char  **map;
+
+	if (map == NULL)
+		map = create_map(i);
+	
+	
+}
+
+int		backtrack(t_tetri *t, int nb_t, int index, int i)
+{
+	static int	i;
+	static char  **map;
+
+	i = 2;
+	if (map == NULL)
+		map = create_map(i);
+	
+}
