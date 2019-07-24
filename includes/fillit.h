@@ -26,8 +26,8 @@ typedef struct	s_point
 
 typedef struct	s_tetri
 {
-	int			larg;
-	int			haut;
+	// int			larg;
+	// int			haut;
 	char		lettre;
 	char		tetri[4][5];
 	t_point		coord[4];
@@ -38,11 +38,11 @@ t_tetri			*create_tetris(char *str, char **str_split);
 t_tetri			*create_coordd(t_tetri *test, int nb_tetri, int j, int k);
 t_tetri			*create_coord(t_tetri *test, int nb_tetrix);
 t_tetri			*create_letter(t_tetri *tetri, int nb_tetris);
-void			create_size(t_tetri *tetri, int nb_t);
-void			get_x(t_tetri *t, int nb_t, int k);
-void			aff(t_tetri *test, char *str);
+// void			create_size(t_tetri *tetri, int nb_t);
+// void			get_x(t_tetri *t, int nb_t, int k);
+void			aff(t_tetri *test, int c_tetris);
 void			free_split(char **str_split);
-void			get_y(t_tetri *t, int nb_t, int k, int tmpy);
+// void			get_y(t_tetri *t, int nb_t, int k, int tmpy);
 int				count_tetris(char *str);
 int				checker(char *str);
 int				line_checker(char *str);
@@ -57,5 +57,7 @@ int     		verif_mettre_piece(char **map, t_point point, t_tetri t);
 char    		**mettre_piece(char **map, t_point point, t_tetri *t, int nb_t);
 char			**create_map(int size);
 void	        affiche_map(char **map, int size);
+void			free_map(char **map);
+char			**backtrack(t_tetri *t, int index, int nb_t, t_point point);
 
 #endif

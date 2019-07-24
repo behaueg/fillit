@@ -114,17 +114,15 @@ t_tetri		*create_coord(t_tetri *test, int nb_tetri)
 	return (test);
 }
 
-void		aff(t_tetri *test, char *str)
+void		aff(t_tetri *test, int c_tetris)
 {
 	int i;
 	int x;
 	int y;
-	int c_tetris;
 
 	i = 0;
 	x = 0;
 	y = 0;
-	c_tetris = count_tetris(str);
 	while (c_tetris >= 1)
 	{
 		while (x < 4)

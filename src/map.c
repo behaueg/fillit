@@ -57,23 +57,15 @@ int     verif_mettre_piece(char **map, t_point point, t_tetri t)
     int dx;                                                                      
     int dy;                                                                     
 
-    i = 0;              
-	printf("val de x = %d\n", (t.coord[0].x));                                               
+    i = 0;                                                           
     dx = point.x - t.coord[0].x;                                           
     dy = point.y - t.coord[0].y;                                                                                        
     while (i < 4)                                                            
-    {       
-		printf("dy = %d\n", dy);
-		printf("dx = %d\n", dx);
-		printf("val de y = %d\n", (t.coord[i].y));         
-		printf("val de x = %d\n", (t.coord[i].x));  
-		printf("nouvelle val de y = %d\n", (t.coord[i].y) + dy);         
-		printf("nouvelle val de x = %d\n", (t.coord[i].x) + dx); 
+    {
 		if (t.coord[i].y + dy >= 7 || t.coord[i].x + dx >= 7)
 			return (0);      
         if (map[(t.coord[i].y) + dy][(t.coord[i].x) + dx] != '.' )
-            return (0);
-		printf("\n");                                                        
+            return (0);                                                
         i++;                                                                 
     }                                                                            
     return (1);
@@ -88,18 +80,25 @@ char    **mettre_piece(char **map, t_point point, t_tetri *t, int nb_t)
     index = 0;
     dx = point.x - t[nb_t].coord[0].x;
     dy = point.y - t[nb_t].coord[0].y;
-    // t[nb_t].coord[0].x = point.x;
-    // t[nb_t].coord[0].y = point.y;
-
-	printf("dx = %d && dy = %d\n", dx, dy);
     while (index < 4)
     {
-		printf("truc = %d\n", (t[nb_t].coord[index].y));
         map[(t[nb_t].coord[index].y) + dy][(t[nb_t].coord[index].x) + dx] = t[nb_t].lettre;
         index++;
     }
     return (map);
  }
+
+void	free_map(char **map)
+{
+	int i;
+
+	i = 0;
+	while (map[i])
+	{
+		ft_strdel(&map[i]);
+		i++;
+	}
+}
 
 void	affiche_map(char **map, int size)
  {

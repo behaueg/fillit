@@ -28,59 +28,59 @@ t_tetri		*create_letter(t_tetri *t, int nb_tetris)
 	return (t);
 }
 
-void		create_size(t_tetri *t, int nb_t)
-{
-	int tmpy;
-	int k;
+// void		create_size(t_tetri *t, int nb_t)
+// {
+// 	int tmpy;
+// 	int k;
 
-	tmpy = 0;
-	k = 0;
-	get_y(t, nb_t, k, tmpy);
-	get_x(t, nb_t, k);
-}
+// 	tmpy = 0;
+// 	k = 0;
+// 	get_y(t, nb_t, k, tmpy);
+// 	get_x(t, nb_t, k);
+// }
 
-void		get_y(t_tetri *t, int nb_t, int k, int tmpy)
-{
-	int tmpy2;
+// void		get_y(t_tetri *t, int nb_t, int k, int tmpy)
+// {
+// 	int tmpy2;
 
-	tmpy2 = 0;
-	while (--nb_t >= 0)
-	{
-		while (++k < 4)
-		{
-			if (t[nb_t].coord[k].y < t[nb_t].coord[tmpy].y)
-				tmpy = k;
-			if (t[nb_t].coord[k].y > t[nb_t].coord[tmpy2].y)
-				tmpy2 = k;
-		}
-		t[nb_t].haut = t[nb_t].coord[tmpy2].y - t[nb_t].coord[tmpy].y;
-		t[nb_t].haut += 1;
-		k = 0;
-		tmpy = 0;
-		tmpy2 = 0;
-	}
-}
+// 	tmpy2 = 0;
+// 	while (--nb_t >= 0)
+// 	{
+// 		while (++k < 4)
+// 		{
+// 			if (t[nb_t].coord[k].y < t[nb_t].coord[tmpy].y)
+// 				tmpy = k;
+// 			if (t[nb_t].coord[k].y > t[nb_t].coord[tmpy2].y)
+// 				tmpy2 = k;
+// 		}
+// 		t[nb_t].haut = t[nb_t].coord[tmpy2].y - t[nb_t].coord[tmpy].y;
+// 		t[nb_t].haut += 1;
+// 		k = 0;
+// 		tmpy = 0;
+// 		tmpy2 = 0;
+// 	}
+// }
 
-void		get_x(t_tetri *t, int nb_t, int k)
-{
-	int tmpx;
-	int tmpx2;
+// void		get_x(t_tetri *t, int nb_t, int k)
+// {
+// 	int tmpx;
+// 	int tmpx2;
 
-	tmpx = 0;
-	tmpx2 = 0;
-	while (--nb_t >= 0)
-	{
-		while (++k < 4)
-		{
-			if (t[nb_t].coord[k].x < t[nb_t].coord[tmpx].x)
-				tmpx = k;
-			if (t[nb_t].coord[k].x > t[nb_t].coord[tmpx2].x)
-				tmpx2 = k;
-		}
-		t[nb_t].larg = t[nb_t].coord[tmpx2].x - t[nb_t].coord[tmpx].x;
-		t[nb_t].larg += 1;
-		k = 0;
-		tmpx = 0;
-		tmpx2 = 0;
-	}
-}
+// 	tmpx = 0;
+// 	tmpx2 = 0;
+// 	while (--nb_t >= 0)
+// 	{
+// 		while (++k < 4)
+// 		{
+// 			if (t[nb_t].coord[k].x < t[nb_t].coord[tmpx].x)
+// 				tmpx = k;
+// 			if (t[nb_t].coord[k].x > t[nb_t].coord[tmpx2].x)
+// 				tmpx2 = k;
+// 		}
+// 		t[nb_t].larg = t[nb_t].coord[tmpx2].x - t[nb_t].coord[tmpx].x;
+// 		t[nb_t].larg += 1;
+// 		k = 0;
+// 		tmpx = 0;
+// 		tmpx2 = 0;
+// 	}
+// }

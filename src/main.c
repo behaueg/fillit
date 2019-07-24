@@ -35,21 +35,12 @@ int		main(int argc, char **argv)
 	tetriminios = create_tetris(str, str_split);
 	tetriminios = create_coord(tetriminios, nb_tetris);
 	tetriminios = create_letter(tetriminios, nb_tetris);
-	create_size(tetriminios, nb_tetris);
-	printf("Valide\n");
-	map = create_map(7);
-	printf("val dans main de x = %d\n", tetriminios[1].coord[0].x);
-	map = init_map(map, 7);
-	affiche_map(map, 7);
+	// create_size(tetriminios, nb_tetris);
 	printf("\n");
 	point.x = 0;
 	point.y = 0;
-	if (verif_mettre_piece(map, point, tetriminios[1]) == 0 )
-	{
-		printf("erreur\n");
-		return (0);
-	}
-	map = mettre_piece(map, point, tetriminios, 1);
+	aff(tetriminios, nb_tetris);
+	map = backtrack(tetriminios, 0, nb_tetris, point);
 	affiche_map(map, 7);
 	// aff(tetriminios, str);
 	free(tetriminios);
